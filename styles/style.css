@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500;600&family=Press+Start+2P&display=swap');
+
 :root {
     --fonte_IBM: "IBM Plex Mono", monospace;
     --fonte_Press_Start: "Press Start 2P", system-ui;
+    --mainColor: rgba(93, 4, 217, 1);
+    --secondColor: rgba(3, 49, 140, 1);
+
 }
 
 * {
@@ -11,7 +15,7 @@
 }
 
 header {
-    background: rgba(83, 0, 200, 1);
+    background: var(--mainColor);
     height: 96px;
     display: flex;
     justify-content: center;
@@ -37,8 +41,17 @@ h2 {
     font-weight: 400;
 }
 
-.meus_produtos_container{
+.meus_produtos_container {
     width: 758px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 40px;
+}
+
+.meus_produtos_container h2 {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -46,60 +59,52 @@ h2 {
     box-shadow: -12px 10px 5.8px 0px rgba(0, 0, 0, 0.25);
     height: 971px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 10px;
     padding: 15px;
-    flex-wrap: wrap;
     overflow: auto;
-    row-gap: 40px;
 }
 
 .card {
-
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 10px;
     padding: 10px;
-    width: 205px;
-    height: 265px;
+    width: 180px;
+    height: 260px;
     border: 3px solid rgba(0, 0, 0, 1);
     border-radius: 10px;
-    background: rgba(93, 4, 217, 1);
+    background: var(--mainColor);
     box-shadow: -5px 6px 3.3px 0px rgba(0, 0, 0, 0.25);
-
-
 }
 
-.card_img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img_card{
-    
+.card-img {
     width: 100%;
     height: 176px;
-
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    
 }
 
-.card span {
+.card-container--info {
+    display: flex;
+    flex-direction: column;
     font-size: 15px;
     font-weight: 400;
+    gap: 25px
 }
-.container__valor__icone-lixeira {
+
+.card-container--value {
+    font-weight: 800;
     display: flex;
     justify-content: space-between;
 }
 
-.container__valor__icone-lixeira span {
-    font-weight: 700;
-}
-
-.icone_lixeira {
+.icon_trash {
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -124,7 +129,7 @@ h2 {
 .add_produtos input {
     width: 392px;
     height: 58px;
-    border: 3px solid rgba(3, 49, 140, 1);
+    border: 3px solid var(--secondColor);
     border-radius: 32px;
     padding-left: 10px;
     font-weight: 600;
@@ -132,7 +137,7 @@ h2 {
 }
 
 .add_produtos ::-webkit-input-placeholder {
-    color: rgba(3, 49, 140, 1);
+    color: var(--secondColor);
 }
 
 .container_botao {
@@ -149,23 +154,22 @@ h2 {
     font-weight: 500;
     font-size: 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 #btn_guarda {
-    background: rgba(3, 49, 140, 1);
+    background: var(--secondColor);
     border: none;
     color: #fff;
-
 }
 
 #btn_limpa {
-    border: 3px solid rgba(3, 49, 140, 1);
-    color: rgba(3, 49, 140, 1);
-
+    border: 3px solid var(--secondColor);
+    color: var(--secondColor);
 }
 
 footer {
-    background: rgba(83, 0, 200, 1);
+    background: var(--mainColor);
     color: rgba(255, 255, 255, 1);
     display: flex;
     flex-direction: column;
@@ -179,6 +183,6 @@ footer {
 
 }
 
-footer .alura{
+footer .alura {
     font-weight: 200;
 }
