@@ -8,7 +8,7 @@ function addCard(name, price, image) {
                     <div class="card-container--info">
                         <p>${name}</p>
                         <div class="card-container--value">
-                            <p>$ ${price}/</p>
+                            <p>$ ${parseFloat(price).toFixed(2)}</p>
                             <img src="/assets/icons/trash.png" class="icon_trash" alt="Ícone de lixeira">
                         </div>
                     </div>`

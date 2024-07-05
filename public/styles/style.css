@@ -145,8 +145,7 @@ h2 {
     gap: 40px;
 }
 
-#btn_guarda,
-#btn_limpa {
+.btn{
     width: 188px;
     height: 55px;
     border-radius: 15px;
@@ -157,7 +156,7 @@ h2 {
     cursor: pointer;
 }
 
-#btn_guarda {
+#btn_adiciona {
     background: var(--secondColor);
     border: none;
     color: #fff;

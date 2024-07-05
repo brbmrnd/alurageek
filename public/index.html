@@ -16,7 +16,7 @@
     <main>
         <section class="meus_produtos_container">
 
-            <h2>MEUS PRODUTOS</h2>
+            <h2>meus produtos</h2>
             <div class="meus_produtos" data-products>
 
                 <!-- <div class="card">
@@ -35,18 +35,18 @@
         </section>
 
         <section class="add_produtos_container">
-            <h2>Adicionar Produtos:</h2>
-            <div class="add_produtos">
+            <h2>adicionar produtos</h2>
+            <form class="add_produtos" data-form>
 
-                <input type="text" placeholder="nome..." id="nome_produto" name="nome_produto" required>
-                <input type="number" placeholder="valor..." name="valor" id="valor">
-                <input type="text" placeholder="imagem..." name="imagem" id="imagem">
+                <input type="text" placeholder="nome..." id="nome_produto" name="nome_produto" required data-name>
+                <input type="number" placeholder="valor..." name="valor" id="valor" step="0.01" required data-price>
+                <input type="text" placeholder="imagem..." name="imagem" id="imagem" required data-image>
                 <div class="container_botao">
-                    <button id="btn_guarda">Guardar</button>
-                    <button id="btn_limpa">Limpar</button>
+                    <button class="btn" id="btn_adiciona" type="submit">Adicionar</button>
+                    <button class="btn" id="btn_limpa" type="reset">Limpar</button>
 
                 </div>
-            </div>
+            </form>
 
         </section>
     </main>
@@ -58,6 +58,7 @@
     </footer>
 
     <script src="./js/displayCards.js" type="module"></script>
+    <script src="./js/addNewProduct.js" type="module"></script>
 
 </body>
 
