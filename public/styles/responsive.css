@@ -1,18 +1,23 @@
-@media (min-width: 360px) and (max-width: 768px) {
+@media (max-width: 768px) {
+    body {
+        min-width: 430px;
+    }
+
     main {
         flex-direction: column-reverse;
         width: 100%;
-        padding: 0 ;
+        padding: 0;
         margin: 0;
     }
 
     .add_produtos_container {
-        width: 80%;
+        width: 100%;
         margin: 130px auto 0 auto;
     }
 
-    .add_produtos_container input,.container_botao {
-        width: 100%;
+    .add_produtos_container input,
+    .container_botao {
+        width: 80%;
         justify-content: center;
     }
 
@@ -31,7 +36,7 @@
         flex-direction: row;
         gap: 10px;
         height: 336px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         overflow-x: auto;
     }
 
@@ -40,6 +45,7 @@
     }
 
     footer {
+        width: 100%;
         height: 168px;
         box-shadow: 0px -10px 9.5px 0px rgba(0, 0, 0, 0.25);
         padding: 20px;
@@ -50,6 +56,4 @@
     footer span {
         width: 100%;
     }
-
-    
 }
