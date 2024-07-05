@@ -1,7 +1,7 @@
 import { connectAPI } from "./connectApi.js"
 const containerProducts = document.querySelector("[data-products]");
 
-function addCard(name, price, image) {
+function addCard(name, price, image, id) {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<img src="${image}" class="card-img" alt="Imagem do produto: ${name}">
@@ -9,7 +9,7 @@ function addCard(name, price, image) {
                         <p>${name}</p>
                         <div class="card-container--value">
                             <p>$ ${parseFloat(price).toFixed(2)}</p>
-                            <img src="/assets/icons/trash.png" class="icon_trash" alt="Ícone de lixeira">
+                            <img src="/assets/icons/trash.png" class="icon_trash" alt="Ícone de lixeira" data-product-id="${id}">
                         </div>
                     </div>`
 
@@ -24,7 +24,7 @@ async function displayCard() {
         if (listAPI.length === 0) {
             containerProducts.innerHTML = `<h2> Nenhum produto adicionado. </h2>`;
         } else {
-            listAPI.forEach(element => containerProducts.appendChild(addCard(element.name, element.price, element.image)));
+            listAPI.forEach(element => containerProducts.appendChild(addCard(element.name, element.price, element.image, element.id)));
         }
     } catch (error) {
         console.error("Error loading data from API:", error);

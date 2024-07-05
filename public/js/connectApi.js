@@ -5,7 +5,7 @@ async function displayCardList() {
     return convertedConnection;
 }
 
-async function addNewItem(name, price, image) {
+async function addNewItem(name, price, image, id) {
     const connection = await fetch('http://localhost:3000/products',
         {
             method: "POST",
@@ -13,7 +13,8 @@ async function addNewItem(name, price, image) {
             body: JSON.stringify({
                 name: name,
                 price: price,
-                image: image
+                image: image,
+                id: id
             })
         });
 
@@ -21,12 +22,27 @@ async function addNewItem(name, price, image) {
         throw new Error("Não foi possível adicionar o produto.")
     }
 
-    const convertedConnection = await connection.json();
-    return convertedConnection;
+    const addedItem = await connection.json();
+    return addedItem;
 
+}
+
+async function removeItem(id) {
+    const connection = await fetch(`http://localhost:3000/products/${id}`,
+        {
+            method: "DELETE"
+        });
+
+    if (!connection.ok) {
+        throw new Error("Não foi possível excluir o produto.");
+    }
+
+    const removedItem = await connection.json();
+    return removedItem;
 }
 
 export const connectAPI = {
     displayCardList,
-    addNewItem
+    addNewItem,
+    removeItem
 }
