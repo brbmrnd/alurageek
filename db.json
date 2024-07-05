@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Game Boy Classic",
+      "price": "60,00",
+      "image": "./assets/products/gameboy.png",
+      "id": 1
+    }
+
+    {
+      "name": "Game Boy Classic",
+      "price": "60,00",
+      "image": "./assets/products/gameboy.png",
+      "id": 2
+    }
+
+
+  ]
+}
